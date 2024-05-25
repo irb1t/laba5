@@ -8,12 +8,6 @@
 30.	F(1) = 2; G(1) = 1; F(n) = (-1)n*(G(n–2)/(3n)!, G(n) = F(n–2), при n >=2
 
 
-
-
-
-
-
-
 def factorial(n):
     if n == 0 or n == 1:
         return 1
@@ -64,13 +58,13 @@ def compare_methods(max_n):
     iterative_times = []
     ns = list(range(1, max_n + 1))
     
-    for n in ns:
+for n in ns:
         rec_time, _ = measure_time(F_recursive, n)
         itr_time, _ = measure_time(F_iterative, n)
         recursive_times.append(rec_time)
         iterative_times.append(itr_time)
     
-    return ns, recursive_times, iterative_times
+return ns, recursive_times, iterative_times
 
 max_n = 20  # Можно изменить для тестирования границ применимости
 ns, recursive_times, iterative_times = compare_methods(max_n)
